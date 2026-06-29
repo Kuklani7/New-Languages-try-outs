@@ -1,0 +1,17 @@
+class Solution {
+    public ListNode middleNode(ListNode head) {
+        int counter = 0;
+        ListNode mover = head;
+        while (mover != null) {
+            mover = mover.next;
+            counter++;
+        }
+        ListNode pointer = head;
+        int iter = counter / 2;
+        while (iter != 0) {
+            pointer = pointer.next;
+            iter--;
+        }
+        return pointer;
+    }
+}
