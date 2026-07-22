@@ -1,0 +1,14 @@
+class Solution(object):
+    def removeNthFromEnd(self, head, n):
+        temp=n;
+        saver=ListNode(-1,head);
+        dummy_head=saver;
+        second_pointer=dummy_head;
+        while not(temp==0):
+            second_pointer=second_pointer.next;
+            temp-=1;
+        while not(second_pointer.next==None):
+            second_pointer=second_pointer.next;
+            dummy_head=dummy_head.next;
+        dummy_head.next=dummy_head.next.next;
+        return saver.next
