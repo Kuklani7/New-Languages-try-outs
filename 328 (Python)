@@ -1,0 +1,13 @@
+class Solution(object):
+    def oddEvenList(self, head):
+        if head==None :
+            return None;
+        mover=head;
+        mem=head.next;
+        while not(mover.next==None) and not(mover.next.next==None):
+            nexter=mover.next;
+            mover.next=mover.next.next;
+            nexter.next=mover.next.next;
+            mover=mover.next;
+        mover.next=mem;
+        return head;
